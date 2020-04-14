@@ -37,7 +37,7 @@ def load_cord(data, semantic_type, prefix, go_mapping):
             node1_id = node1.split(':')[1] if prefix == 'HGNC' else node1
             if node1_id not in res:
                 res[node1_id] = {
-                    prefix: node1_id,
+                    prefix.lower(): node1_id,
                     "associated_with": [],
                     "@type": semantic_type
                 }
@@ -53,7 +53,7 @@ def load_cord(data, semantic_type, prefix, go_mapping):
             node2_id = node2.split(':')[1] if prefix == 'HGNC' else node2
             if node2_id not in res:
                 res[node2_id] = {
-                    prefix: node2_id,
+                    prefix.lower(): node2_id,
                     "associated_with": [],
                     "@type": semantic_type
                 }
